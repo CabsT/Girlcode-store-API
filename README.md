@@ -12,3 +12,7 @@ An API for Girlcode Store built with flask.
 
 ##run debug mode
 ```````python -m flask --app Api --debug run``````
+
+##installed flask-cors
+
+`````python -m pip install Flask-cors`````
