@@ -2,17 +2,17 @@
 
 An API for Girlcode Store built with flask.
 
-##Install required packages
+##Install flask
+```python -m pip install Flask```
 
+##Install required packages
 ```python -m pip install -r requirements.txt ```
 
 ##run the api
-
 ```python -m flask --app Api run```
 
 ##run debug mode
 ```python -m flask --app Api --debug run```
 
 ##installed flask-cors
-
 ```python -m pip install Flask-cors```
