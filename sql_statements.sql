@@ -9,7 +9,7 @@ CREATE TABLE categories (
 -- Insert Initial Categories
 INSERT INTO categories (cat_name, slug)
 VALUES ('Furniture', 'furniture'),
-	('Hand Bag', 'hand-bag'),
+	('Handbags', 'handbags'),
 	('Books', 'books'),
 	('Tech', 'tech'),
 	('Sneakers', 'sneakers'),
@@ -21,4 +21,21 @@ ADD cat_img TEXT;
 
 -- Updated cat_img column for all rows
 UPDATE categories
-SET cat_img='cats_img.jpg';
+SET cat_img='furniture.jpg';
+
+UPDATE categories
+SET cat_img ='handbags.jpeg' WHERE id = 2;
+
+UPDATE categories
+SET cat_img ='books.jpg' WHERE id = 3;
+
+UPDATE categories
+SET cat_img ='Tech.jpg'WHERE id = 4;
+
+UPDATE categories
+SET cat_img ='sneakers.jpg' WHERE id = 5;
+
+UPDATE categories
+SET cat_img ='travel.jpg' WHERE id =6;
+
+

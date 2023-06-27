@@ -16,3 +16,7 @@ An API for Girlcode Store built with flask.
 
 ##installed flask-cors
 ```python -m pip install Flask-cors```
+
+##Install Python-dotenv to read key-value pairs from a .env file and can set them as environment variables.
+```python -m pip install python-dotenv```
+
