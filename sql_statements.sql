@@ -38,4 +38,32 @@ SET cat_img ='sneakers.jpg' WHERE id = 5;
 UPDATE categories
 SET cat_img ='travel.jpg' WHERE id =6;
 
+INSERT INTO products (prod_name,prod_img,prod_desc,prod_slug,prod_price)
+VALUES ('HomePod Mini','homepodmini.jpg','Table with air purifier, stained veneer/black','homepod-mini','239.00');
 
+INSERT INTO products (prod_name,prod_img,prod_desc,prod_slug,prod_price)
+VALUES ('Instax Mini','Instax.jpg','Selfie mode and selfie mirror','instax-mini','99.99');
+
+INSERT INTO products (prod_name,prod_img,prod_desc,prod_slug,prod_price)
+VALUES ('Camping Duffelbag','Backpack.jpg','Camping Duffelbag','duffelbag','159.00');
+
+CREATE TABLE categories_products (
+ id SERIAL PRIMARY KEY,
+ cat_id INT NOT NULL,
+ prod_id INT NOT NULL,
+ UNIQUE (cat_id,prod_id),
+ FOREIGN KEY (cat_id)REFERENCES categories(id),
+ FOREIGN KEY (prod_id)REFERENCES products(id)
+);
+
+INSERT INTO categories_products (cat_id, prod_id)
+VALUES (4,1);
+INSERT INTO categories_products (cat_id, prod_id)
+VALUES (4,4);
+INSERT INTO categories_products (cat_id, prod_id)
+VALUES (6,5);
+
+SELECT * FROM categories 
+FULL OUTER JOIN categories_products ON categories_products.cat_id=categories.id
+FULL OUTER JOIN products ON categories_products.prod_id=products.id
+WHERE cat_slug = 'tech'
